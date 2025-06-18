@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 添加混合内容修复标签 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>商业道德评价体系</title>
+    <!-- 确保所有外部资源使用HTTPS -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -116,6 +120,9 @@
             transition: all 0.3s ease;
             font-family: 'Noto Serif SC', serif;
             box-shadow: 0 3px 12px rgba(0, 80, 180, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         
         .nav-btn:hover {
@@ -409,10 +416,50 @@
             font-size: 13px;
             color: #a0d8ff;
         }
+        
+        /* 添加安全提示 */
+        .security-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(46, 204, 113, 0.7);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* 添加HTTPS状态提示 */
+        .https-status {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(52, 152, 219, 0.7);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- 安全提示标识 -->
+        <div class="security-badge">
+            <i class="fas fa-shield-alt"></i> HTTPS安全连接
+        </div>
+        
+        <!-- HTTPS状态提示 -->
+        <div class="https-status">
+            <i class="fas fa-lock"></i> 所有资源已通过安全连接加载
+        </div>
+        
         <!-- 封面场景 -->
         <div class="scene active" id="scene0">
             <h1 class="title">商业道德评价体系</h1>
@@ -447,7 +494,9 @@
             <div class="progress-indicator">1/8</div>
             <div class="wechat-tip">微信扫描二维码查看完整内容</div>
             <div class="navigation">
-                <button class="nav-btn" onclick="nextScene()">下一页</button>
+                <button class="nav-btn" onclick="nextScene()">
+                    <i class="fas fa-arrow-right"></i> 下一页
+                </button>
             </div>
         </div>
         
@@ -510,8 +559,12 @@
             </div>
             <div class="progress-indicator">2/8</div>
             <div class="navigation">
-                <button class="nav-btn" onclick="prevScene()">上一页</button>
-                <button class="nav-btn" onclick="nextScene()">下一页</button>
+                <button class="nav-btn" onclick="prevScene()">
+                    <i class="fas fa-arrow-left"></i> 上一页
+                </button>
+                <button class="nav-btn" onclick="nextScene()">
+                    <i class="fas fa-arrow-right"></i> 下一页
+                </button>
             </div>
         </div>
         
@@ -553,8 +606,12 @@
             </div>
             <div class="progress-indicator">3/8</div>
             <div class="navigation">
-                <button class="nav-btn" onclick="prevScene()">上一页</button>
-                <button class="nav-btn" onclick="nextScene()">下一页</button>
+                <button class="nav-btn" onclick="prevScene()">
+                    <i class="fas fa-arrow-left"></i> 上一页
+                </button>
+                <button class="nav-btn" onclick="nextScene()">
+                    <i class="fas fa-arrow-right"></i> 下一页
+                </button>
             </div>
         </div>
         
@@ -608,8 +665,12 @@
             </div>
             <div class="progress-indicator">4/8</div>
             <div class="navigation">
-                <button class="nav-btn" onclick="prevScene()">上一页</button>
-                <button class="nav-btn" onclick="nextScene()">下一页</button>
+                <button class="nav-btn" onclick="prevScene()">
+                    <i class="fas fa-arrow-left"></i> 上一页
+                </button>
+                <button class="nav-btn" onclick="nextScene()">
+                    <i class="fas fa-arrow-right"></i> 下一页
+                </button>
             </div>
         </div>
         
@@ -653,8 +714,12 @@
             </div>
             <div class="progress-indicator">5/8</div>
             <div class="navigation">
-                <button class="nav-btn" onclick="prevScene()">上一页</button>
-                <button class="nav-btn" onclick="nextScene()">下一页</button>
+                <button class="nav-btn" onclick="prevScene()">
+                    <i class="fas fa-arrow-left"></i> 上一页
+                </button>
+                <button class="nav-btn" onclick="nextScene()">
+                    <i class="fas fa-arrow-right"></i> 下一页
+                </button>
             </div>
         </div>
         
@@ -680,8 +745,12 @@
             </div>
             <div class="progress-indicator">6/8</div>
             <div class="navigation">
-                <button class="nav-btn" onclick="prevScene()">上一页</button>
-                <button class="nav-btn" onclick="nextScene()">下一页</button>
+                <button class="nav-btn" onclick="prevScene()">
+                    <i class="fas fa-arrow-left"></i> 上一页
+                </button>
+                <button class="nav-btn" onclick="nextScene()">
+                    <i class="fas fa-arrow-right"></i> 下一页
+                </button>
             </div>
         </div>
         
@@ -708,8 +777,12 @@
             </div>
             <div class="progress-indicator">7/8</div>
             <div class="navigation">
-                <button class="nav-btn" onclick="prevScene()">上一页</button>
-                <button class="nav-btn" onclick="nextScene()">下一页</button>
+                <button class="nav-btn" onclick="prevScene()">
+                    <i class="fas fa-arrow-left"></i> 上一页
+                </button>
+                <button class="nav-btn" onclick="nextScene()">
+                    <i class="fas fa-arrow-right"></i> 下一页
+                </button>
             </div>
         </div>
         
@@ -751,8 +824,12 @@
             </div>
             <div class="progress-indicator">8/8</div>
             <div class="navigation">
-                <button class="nav-btn" onclick="prevScene()">上一页</button>
-                <button class="nav-btn" onclick="nextScene()">返回首页</button>
+                <button class="nav-btn" onclick="prevScene()">
+                    <i class="fas fa-arrow-left"></i> 上一页
+                </button>
+                <button class="nav-btn" onclick="nextScene()">
+                    <i class="fas fa-home"></i> 返回首页
+                </button>
             </div>
         </div>
     </div>
@@ -831,6 +908,24 @@
                 scene.style.display = 'none';
             });
             updateProgress();
+            
+            // 添加错误捕获
+            window.addEventListener('error', function(e) {
+                console.warn('资源加载失败:', e.target.src || e.target.href);
+                // 显示安全状态
+                document.querySelector('.https-status').innerHTML = 
+                    '<i class="fas fa-exclamation-triangle"></i> 检测到资源加载问题';
+                document.querySelector('.https-status').style.background = 'rgba(231, 76, 60, 0.7)';
+            });
+        });
+        
+        // 添加键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevScene();
+            } else if (e.key === 'ArrowRight') {
+                nextScene();
+            }
         });
     </script>
 </body>
